@@ -20,17 +20,41 @@ use TencentCloud\Common\AbstractModel;
 /**
  * SetNodePoolNodeProtection返回参数结构体
  *
+ * @method array getSucceedInstanceIds() 获取成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setSucceedInstanceIds(array $SucceedInstanceIds) 设置成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method array getFailedInstanceIds() 获取没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setFailedInstanceIds(array $FailedInstanceIds) 设置没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
 class SetNodePoolNodeProtectionResponse extends AbstractModel
 {
     /**
+     * @var array 成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $SucceedInstanceIds;
+
+    /**
+     * @var array 没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $FailedInstanceIds;
+
+    /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param array $SucceedInstanceIds 成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $FailedInstanceIds 没有成功设置的节点id
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +70,14 @@ class SetNodePoolNodeProtectionResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("SucceedInstanceIds",$param) and $param["SucceedInstanceIds"] !== null) {
+            $this->SucceedInstanceIds = $param["SucceedInstanceIds"];
+        }
+
+        if (array_key_exists("FailedInstanceIds",$param) and $param["FailedInstanceIds"] !== null) {
+            $this->FailedInstanceIds = $param["FailedInstanceIds"];
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }
