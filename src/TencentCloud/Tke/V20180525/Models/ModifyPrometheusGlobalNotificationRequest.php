@@ -18,28 +18,28 @@ namespace TencentCloud\Tke\V20180525\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * ModifyPrometheusAlertPolicy请求参数结构体
+ * ModifyPrometheusGlobalNotification请求参数结构体
  *
- * @method string getInstanceId() 获取实例id
- * @method void setInstanceId(string $InstanceId) 设置实例id
- * @method PrometheusAlertPolicyItem getAlertRule() 获取告警配置
- * @method void setAlertRule(PrometheusAlertPolicyItem $AlertRule) 设置告警配置
+ * @method string getInstanceId() 获取实例ID
+ * @method void setInstanceId(string $InstanceId) 设置实例ID
+ * @method PrometheusNotificationItem getNotification() 获取告警通知渠道
+ * @method void setNotification(PrometheusNotificationItem $Notification) 设置告警通知渠道
  */
-class ModifyPrometheusAlertPolicyRequest extends AbstractModel
+class ModifyPrometheusGlobalNotificationRequest extends AbstractModel
 {
     /**
-     * @var string 实例id
+     * @var string 实例ID
      */
     public $InstanceId;
 
     /**
-     * @var PrometheusAlertPolicyItem 告警配置
+     * @var PrometheusNotificationItem 告警通知渠道
      */
-    public $AlertRule;
+    public $Notification;
 
     /**
-     * @param string $InstanceId 实例id
-     * @param PrometheusAlertPolicyItem $AlertRule 告警配置
+     * @param string $InstanceId 实例ID
+     * @param PrometheusNotificationItem $Notification 告警通知渠道
      */
     function __construct()
     {
@@ -58,9 +58,9 @@ class ModifyPrometheusAlertPolicyRequest extends AbstractModel
             $this->InstanceId = $param["InstanceId"];
         }
 
-        if (array_key_exists("AlertRule",$param) and $param["AlertRule"] !== null) {
-            $this->AlertRule = new PrometheusAlertPolicyItem();
-            $this->AlertRule->deserialize($param["AlertRule"]);
+        if (array_key_exists("Notification",$param) and $param["Notification"] !== null) {
+            $this->Notification = new PrometheusNotificationItem();
+            $this->Notification->deserialize($param["Notification"]);
         }
     }
 }

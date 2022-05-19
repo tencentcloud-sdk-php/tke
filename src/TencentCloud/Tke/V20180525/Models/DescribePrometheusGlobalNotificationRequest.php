@@ -18,20 +18,20 @@ namespace TencentCloud\Tke\V20180525\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeletePrometheusTemp请求参数结构体
+ * DescribePrometheusGlobalNotification请求参数结构体
  *
- * @method string getTemplateId() 获取模板id
- * @method void setTemplateId(string $TemplateId) 设置模板id
+ * @method string getInstanceId() 获取实例ID
+ * @method void setInstanceId(string $InstanceId) 设置实例ID
  */
-class DeletePrometheusTempRequest extends AbstractModel
+class DescribePrometheusGlobalNotificationRequest extends AbstractModel
 {
     /**
-     * @var string 模板id
+     * @var string 实例ID
      */
-    public $TemplateId;
+    public $InstanceId;
 
     /**
-     * @param string $TemplateId 模板id
+     * @param string $InstanceId 实例ID
      */
     function __construct()
     {
@@ -46,8 +46,8 @@ class DeletePrometheusTempRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TemplateId",$param) and $param["TemplateId"] !== null) {
-            $this->TemplateId = $param["TemplateId"];
+        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
+            $this->InstanceId = $param["InstanceId"];
         }
     }
 }
