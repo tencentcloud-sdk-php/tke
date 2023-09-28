@@ -18,59 +18,71 @@ namespace TencentCloud\Tke\V20180525\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * cuDNN的版本信息
+ * 超级节点上的资源统计
  *
- * @method string getVersion() 获取cuDNN的版本
+ * @method string getNodeName() 获取节点名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setVersion(string $Version) 设置cuDNN的版本
+ * @method void setNodeName(string $NodeName) 设置节点名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getName() 获取cuDNN的名字
+ * @method integer getNum() 获取节点上的资源总数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置cuDNN的名字
+ * @method void setNum(integer $Num) 设置节点上的资源总数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDocName() 获取cuDNN的Doc名字
+ * @method float getCpu() 获取节点上的总核数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDocName(string $DocName) 设置cuDNN的Doc名字
+ * @method void setCpu(float $Cpu) 设置节点上的总核数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDevName() 获取cuDNN的Dev名字
+ * @method float getMemory() 获取节点上的总内存数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDevName(string $DevName) 设置cuDNN的Dev名字
+ * @method void setMemory(float $Memory) 设置节点上的总内存数
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method float getGpu() 获取节点上的总 GPU 卡数
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setGpu(float $Gpu) 设置节点上的总 GPU 卡数
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CUDNN extends AbstractModel
+class SuperNodeResource extends AbstractModel
 {
     /**
-     * @var string cuDNN的版本
+     * @var string 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Version;
+    public $NodeName;
 
     /**
-     * @var string cuDNN的名字
+     * @var integer 节点上的资源总数
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Name;
+    public $Num;
 
     /**
-     * @var string cuDNN的Doc名字
+     * @var float 节点上的总核数
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $DocName;
+    public $Cpu;
 
     /**
-     * @var string cuDNN的Dev名字
+     * @var float 节点上的总内存数
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $DevName;
+    public $Memory;
 
     /**
-     * @param string $Version cuDNN的版本
+     * @var float 节点上的总 GPU 卡数
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Name cuDNN的名字
+     */
+    public $Gpu;
+
+    /**
+     * @param string $NodeName 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $DocName cuDNN的Doc名字
+     * @param integer $Num 节点上的资源总数
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $DevName cuDNN的Dev名字
+     * @param float $Cpu 节点上的总核数
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param float $Memory 节点上的总内存数
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param float $Gpu 节点上的总 GPU 卡数
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -86,20 +98,24 @@ class CUDNN extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Version",$param) and $param["Version"] !== null) {
-            $this->Version = $param["Version"];
+        if (array_key_exists("NodeName",$param) and $param["NodeName"] !== null) {
+            $this->NodeName = $param["NodeName"];
         }
 
-        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->Name = $param["Name"];
+        if (array_key_exists("Num",$param) and $param["Num"] !== null) {
+            $this->Num = $param["Num"];
         }
 
-        if (array_key_exists("DocName",$param) and $param["DocName"] !== null) {
-            $this->DocName = $param["DocName"];
+        if (array_key_exists("Cpu",$param) and $param["Cpu"] !== null) {
+            $this->Cpu = $param["Cpu"];
         }
 
-        if (array_key_exists("DevName",$param) and $param["DevName"] !== null) {
-            $this->DevName = $param["DevName"];
+        if (array_key_exists("Memory",$param) and $param["Memory"] !== null) {
+            $this->Memory = $param["Memory"];
+        }
+
+        if (array_key_exists("Gpu",$param) and $param["Gpu"] !== null) {
+            $this->Gpu = $param["Gpu"];
         }
     }
 }

@@ -18,59 +18,71 @@ namespace TencentCloud\Tke\V20180525\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * cuDNN的版本信息
+ * Pod所在的节点信息
  *
- * @method string getVersion() 获取cuDNN的版本
+ * @method string getClusterId() 获取集群 ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setVersion(string $Version) 设置cuDNN的版本
+ * @method void setClusterId(string $ClusterId) 设置集群 ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getName() 获取cuDNN的名字
+ * @method string getNodeName() 获取 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setName(string $Name) 设置cuDNN的名字
+ * @method void setNodeName(string $NodeName) 设置 节点名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDocName() 获取cuDNN的Doc名字
+ * @method string getZone() 获取可用区
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDocName(string $DocName) 设置cuDNN的Doc名字
+ * @method void setZone(string $Zone) 设置可用区
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getDevName() 获取cuDNN的Dev名字
+ * @method string getNamespace() 获取命名空间
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDevName(string $DevName) 设置cuDNN的Dev名字
+ * @method void setNamespace(string $Namespace) 设置命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getName() 获取 Pod 名称
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setName(string $Name) 设置 Pod 名称
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CUDNN extends AbstractModel
+class PodNodeInfo extends AbstractModel
 {
     /**
-     * @var string cuDNN的版本
+     * @var string 集群 ID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Version;
+    public $ClusterId;
 
     /**
-     * @var string cuDNN的名字
+     * @var string  节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $NodeName;
+
+    /**
+     * @var string 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Zone;
+
+    /**
+     * @var string 命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Namespace;
+
+    /**
+     * @var string  Pod 名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Name;
 
     /**
-     * @var string cuDNN的Doc名字
+     * @param string $ClusterId 集群 ID
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $DocName;
-
-    /**
-     * @var string cuDNN的Dev名字
+     * @param string $NodeName  节点名称
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $DevName;
-
-    /**
-     * @param string $Version cuDNN的版本
+     * @param string $Zone 可用区
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Name cuDNN的名字
+     * @param string $Namespace 命名空间
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $DocName cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $DevName cuDNN的Dev名字
+     * @param string $Name  Pod 名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -86,20 +98,24 @@ class CUDNN extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Version",$param) and $param["Version"] !== null) {
-            $this->Version = $param["Version"];
+        if (array_key_exists("ClusterId",$param) and $param["ClusterId"] !== null) {
+            $this->ClusterId = $param["ClusterId"];
+        }
+
+        if (array_key_exists("NodeName",$param) and $param["NodeName"] !== null) {
+            $this->NodeName = $param["NodeName"];
+        }
+
+        if (array_key_exists("Zone",$param) and $param["Zone"] !== null) {
+            $this->Zone = $param["Zone"];
+        }
+
+        if (array_key_exists("Namespace",$param) and $param["Namespace"] !== null) {
+            $this->Namespace = $param["Namespace"];
         }
 
         if (array_key_exists("Name",$param) and $param["Name"] !== null) {
             $this->Name = $param["Name"];
-        }
-
-        if (array_key_exists("DocName",$param) and $param["DocName"] !== null) {
-            $this->DocName = $param["DocName"];
-        }
-
-        if (array_key_exists("DevName",$param) and $param["DevName"] !== null) {
-            $this->DevName = $param["DevName"];
         }
     }
 }
