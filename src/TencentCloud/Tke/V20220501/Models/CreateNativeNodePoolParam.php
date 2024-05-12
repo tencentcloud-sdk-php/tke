@@ -18,86 +18,53 @@ namespace TencentCloud\Tke\V20220501\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 原生节点池信息
+ * 原生节点池创建参数
  *
- * @method MachineSetScaling getScaling() 获取伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setScaling(MachineSetScaling $Scaling) 设置伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method MachineSetScaling getScaling() 获取节点池伸缩配置
+ * @method void setScaling(MachineSetScaling $Scaling) 设置节点池伸缩配置
  * @method array getSubnetIds() 获取子网列表
  * @method void setSubnetIds(array $SubnetIds) 设置子网列表
- * @method array getSecurityGroupIds() 获取安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSecurityGroupIds(array $SecurityGroupIds) 设置安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method MachineUpgradeSettings getUpgradeSettings() 获取自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setUpgradeSettings(MachineUpgradeSettings $UpgradeSettings) 设置自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getAutoRepair() 获取是否开启自愈能力
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setAutoRepair(boolean $AutoRepair) 设置是否开启自愈能力
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getInstanceChargeType() 获取节点计费类型
- * @method void setInstanceChargeType(string $InstanceChargeType) 设置节点计费类型
- * @method InstanceChargePrepaid getInstanceChargePrepaid() 获取包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInstanceChargePrepaid(InstanceChargePrepaid $InstanceChargePrepaid) 设置包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getInstanceChargeType() 获取节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
+ * @method void setInstanceChargeType(string $InstanceChargeType) 设置节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
  * @method Disk getSystemDisk() 获取系统盘配置
  * @method void setSystemDisk(Disk $SystemDisk) 设置系统盘配置
- * @method array getKeyIds() 获取密钥 ID 列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setKeyIds(array $KeyIds) 设置密钥 ID 列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method ManagementConfig getManagement() 获取Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setManagement(ManagementConfig $Management) 设置Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getHealthCheckPolicyName() 获取故障自愈规则名称
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setHealthCheckPolicyName(string $HealthCheckPolicyName) 设置故障自愈规则名称
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getHostNamePattern() 获取原生节点池hostName模式串
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setHostNamePattern(string $HostNamePattern) 设置原生节点池hostName模式串
-注意：此字段可能返回 null，表示取不到有效值。
- * @method array getKubeletArgs() 获取kubelet 自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setKubeletArgs(array $KubeletArgs) 设置kubelet 自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
- * @method LifecycleConfig getLifecycle() 获取预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setLifecycle(LifecycleConfig $Lifecycle) 设置预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRuntimeRootDir() 获取运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setRuntimeRootDir(string $RuntimeRootDir) 设置运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
- * @method boolean getEnableAutoscaling() 获取是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setEnableAutoscaling(boolean $EnableAutoscaling) 设置是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
  * @method array getInstanceTypes() 获取机型列表
  * @method void setInstanceTypes(array $InstanceTypes) 设置机型列表
+ * @method array getSecurityGroupIds() 获取安全组列表
+ * @method void setSecurityGroupIds(array $SecurityGroupIds) 设置安全组列表
+ * @method MachineUpgradeSettings getUpgradeSettings() 获取自动升级配置
+ * @method void setUpgradeSettings(MachineUpgradeSettings $UpgradeSettings) 设置自动升级配置
+ * @method boolean getAutoRepair() 获取是否开启自愈能力
+ * @method void setAutoRepair(boolean $AutoRepair) 设置是否开启自愈能力
+ * @method InstanceChargePrepaid getInstanceChargePrepaid() 获取包年包月机型计费配置
+ * @method void setInstanceChargePrepaid(InstanceChargePrepaid $InstanceChargePrepaid) 设置包年包月机型计费配置
+ * @method ManagementConfig getManagement() 获取节点池 Management 参数设置
+ * @method void setManagement(ManagementConfig $Management) 设置节点池 Management 参数设置
+ * @method string getHealthCheckPolicyName() 获取故障自愈规则名称
+ * @method void setHealthCheckPolicyName(string $HealthCheckPolicyName) 设置故障自愈规则名称
+ * @method string getHostNamePattern() 获取原生节点池hostName模式串
+ * @method void setHostNamePattern(string $HostNamePattern) 设置原生节点池hostName模式串
+ * @method array getKubeletArgs() 获取kubelet 自定义参数
+ * @method void setKubeletArgs(array $KubeletArgs) 设置kubelet 自定义参数
+ * @method LifecycleConfig getLifecycle() 获取预定义脚本
+ * @method void setLifecycle(LifecycleConfig $Lifecycle) 设置预定义脚本
+ * @method string getRuntimeRootDir() 获取运行时根目录
+ * @method void setRuntimeRootDir(string $RuntimeRootDir) 设置运行时根目录
+ * @method boolean getEnableAutoscaling() 获取是否开启弹性伸缩
+ * @method void setEnableAutoscaling(boolean $EnableAutoscaling) 设置是否开启弹性伸缩
  * @method integer getReplicas() 获取期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
  * @method void setReplicas(integer $Replicas) 设置期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
  * @method InternetAccessible getInternetAccessible() 获取公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
  * @method void setInternetAccessible(InternetAccessible $InternetAccessible) 设置公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method array getDataDisks() 获取原生节点池数据盘
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDataDisks(array $DataDisks) 设置原生节点池数据盘
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method array getDataDisks() 获取原生节点池数据盘列表
+ * @method void setDataDisks(array $DataDisks) 设置原生节点池数据盘列表
+ * @method array getKeyIds() 获取节点池ssh公钥id数组
+ * @method void setKeyIds(array $KeyIds) 设置节点池ssh公钥id数组
  */
-class NativeNodePoolInfo extends AbstractModel
+class CreateNativeNodePoolParam extends AbstractModel
 {
     /**
-     * @var MachineSetScaling 伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var MachineSetScaling 节点池伸缩配置
      */
     public $Scaling;
 
@@ -107,33 +74,9 @@ class NativeNodePoolInfo extends AbstractModel
     public $SubnetIds;
 
     /**
-     * @var array 安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $SecurityGroupIds;
-
-    /**
-     * @var MachineUpgradeSettings 自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $UpgradeSettings;
-
-    /**
-     * @var boolean 是否开启自愈能力
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $AutoRepair;
-
-    /**
-     * @var string 节点计费类型
+     * @var string 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
      */
     public $InstanceChargeType;
-
-    /**
-     * @var InstanceChargePrepaid 包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $InstanceChargePrepaid;
 
     /**
      * @var Disk 系统盘配置
@@ -141,113 +84,106 @@ class NativeNodePoolInfo extends AbstractModel
     public $SystemDisk;
 
     /**
-     * @var array 密钥 ID 列表
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $KeyIds;
-
-    /**
-     * @var ManagementConfig Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $Management;
-
-    /**
-     * @var string 故障自愈规则名称
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $HealthCheckPolicyName;
-
-    /**
-     * @var string 原生节点池hostName模式串
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $HostNamePattern;
-
-    /**
-     * @var array kubelet 自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $KubeletArgs;
-
-    /**
-     * @var LifecycleConfig 预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $Lifecycle;
-
-    /**
-     * @var string 运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $RuntimeRootDir;
-
-    /**
-     * @var boolean 是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $EnableAutoscaling;
-
-    /**
      * @var array 机型列表
      */
     public $InstanceTypes;
 
     /**
+     * @var array 安全组列表
+     */
+    public $SecurityGroupIds;
+
+    /**
+     * @var MachineUpgradeSettings 自动升级配置
+     */
+    public $UpgradeSettings;
+
+    /**
+     * @var boolean 是否开启自愈能力
+     */
+    public $AutoRepair;
+
+    /**
+     * @var InstanceChargePrepaid 包年包月机型计费配置
+     */
+    public $InstanceChargePrepaid;
+
+    /**
+     * @var ManagementConfig 节点池 Management 参数设置
+     */
+    public $Management;
+
+    /**
+     * @var string 故障自愈规则名称
+     */
+    public $HealthCheckPolicyName;
+
+    /**
+     * @var string 原生节点池hostName模式串
+     */
+    public $HostNamePattern;
+
+    /**
+     * @var array kubelet 自定义参数
+     */
+    public $KubeletArgs;
+
+    /**
+     * @var LifecycleConfig 预定义脚本
+     */
+    public $Lifecycle;
+
+    /**
+     * @var string 运行时根目录
+     */
+    public $RuntimeRootDir;
+
+    /**
+     * @var boolean 是否开启弹性伸缩
+     */
+    public $EnableAutoscaling;
+
+    /**
      * @var integer 期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Replicas;
 
     /**
      * @var InternetAccessible 公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
      */
     public $InternetAccessible;
 
     /**
-     * @var array 原生节点池数据盘
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var array 原生节点池数据盘列表
      */
     public $DataDisks;
 
     /**
-     * @param MachineSetScaling $Scaling 伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var array 节点池ssh公钥id数组
+     */
+    public $KeyIds;
+
+    /**
+     * @param MachineSetScaling $Scaling 节点池伸缩配置
      * @param array $SubnetIds 子网列表
-     * @param array $SecurityGroupIds 安全组列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param MachineUpgradeSettings $UpgradeSettings 自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $AutoRepair 是否开启自愈能力
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $InstanceChargeType 节点计费类型
-     * @param InstanceChargePrepaid $InstanceChargePrepaid 包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $InstanceChargeType 节点计费类型。PREPAID：包年包月；POSTPAID_BY_HOUR：按量计费（默认）；
      * @param Disk $SystemDisk 系统盘配置
-     * @param array $KeyIds 密钥 ID 列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param ManagementConfig $Management Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $HealthCheckPolicyName 故障自愈规则名称
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $HostNamePattern 原生节点池hostName模式串
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $KubeletArgs kubelet 自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param LifecycleConfig $Lifecycle 预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RuntimeRootDir 运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param boolean $EnableAutoscaling 是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
      * @param array $InstanceTypes 机型列表
+     * @param array $SecurityGroupIds 安全组列表
+     * @param MachineUpgradeSettings $UpgradeSettings 自动升级配置
+     * @param boolean $AutoRepair 是否开启自愈能力
+     * @param InstanceChargePrepaid $InstanceChargePrepaid 包年包月机型计费配置
+     * @param ManagementConfig $Management 节点池 Management 参数设置
+     * @param string $HealthCheckPolicyName 故障自愈规则名称
+     * @param string $HostNamePattern 原生节点池hostName模式串
+     * @param array $KubeletArgs kubelet 自定义参数
+     * @param LifecycleConfig $Lifecycle 预定义脚本
+     * @param string $RuntimeRootDir 运行时根目录
+     * @param boolean $EnableAutoscaling 是否开启弹性伸缩
      * @param integer $Replicas 期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
      * @param InternetAccessible $InternetAccessible 公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $DataDisks 原生节点池数据盘
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $DataDisks 原生节点池数据盘列表
+     * @param array $KeyIds 节点池ssh公钥id数组
      */
     function __construct()
     {
@@ -271,6 +207,19 @@ class NativeNodePoolInfo extends AbstractModel
             $this->SubnetIds = $param["SubnetIds"];
         }
 
+        if (array_key_exists("InstanceChargeType",$param) and $param["InstanceChargeType"] !== null) {
+            $this->InstanceChargeType = $param["InstanceChargeType"];
+        }
+
+        if (array_key_exists("SystemDisk",$param) and $param["SystemDisk"] !== null) {
+            $this->SystemDisk = new Disk();
+            $this->SystemDisk->deserialize($param["SystemDisk"]);
+        }
+
+        if (array_key_exists("InstanceTypes",$param) and $param["InstanceTypes"] !== null) {
+            $this->InstanceTypes = $param["InstanceTypes"];
+        }
+
         if (array_key_exists("SecurityGroupIds",$param) and $param["SecurityGroupIds"] !== null) {
             $this->SecurityGroupIds = $param["SecurityGroupIds"];
         }
@@ -284,22 +233,9 @@ class NativeNodePoolInfo extends AbstractModel
             $this->AutoRepair = $param["AutoRepair"];
         }
 
-        if (array_key_exists("InstanceChargeType",$param) and $param["InstanceChargeType"] !== null) {
-            $this->InstanceChargeType = $param["InstanceChargeType"];
-        }
-
         if (array_key_exists("InstanceChargePrepaid",$param) and $param["InstanceChargePrepaid"] !== null) {
             $this->InstanceChargePrepaid = new InstanceChargePrepaid();
             $this->InstanceChargePrepaid->deserialize($param["InstanceChargePrepaid"]);
-        }
-
-        if (array_key_exists("SystemDisk",$param) and $param["SystemDisk"] !== null) {
-            $this->SystemDisk = new Disk();
-            $this->SystemDisk->deserialize($param["SystemDisk"]);
-        }
-
-        if (array_key_exists("KeyIds",$param) and $param["KeyIds"] !== null) {
-            $this->KeyIds = $param["KeyIds"];
         }
 
         if (array_key_exists("Management",$param) and $param["Management"] !== null) {
@@ -332,10 +268,6 @@ class NativeNodePoolInfo extends AbstractModel
             $this->EnableAutoscaling = $param["EnableAutoscaling"];
         }
 
-        if (array_key_exists("InstanceTypes",$param) and $param["InstanceTypes"] !== null) {
-            $this->InstanceTypes = $param["InstanceTypes"];
-        }
-
         if (array_key_exists("Replicas",$param) and $param["Replicas"] !== null) {
             $this->Replicas = $param["Replicas"];
         }
@@ -352,6 +284,10 @@ class NativeNodePoolInfo extends AbstractModel
                 $obj->deserialize($value);
                 array_push($this->DataDisks, $obj);
             }
+        }
+
+        if (array_key_exists("KeyIds",$param) and $param["KeyIds"] !== null) {
+            $this->KeyIds = $param["KeyIds"];
         }
     }
 }
