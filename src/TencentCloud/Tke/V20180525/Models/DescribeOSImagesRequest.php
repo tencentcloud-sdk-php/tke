@@ -18,20 +18,16 @@ namespace TencentCloud\Tke\V20180525\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 探针使用TcpSocket检测容器
+ * DescribeOSImages请求参数结构体
  *
- * @method integer getPort() 获取TcpSocket检测的端口
- * @method void setPort(integer $Port) 设置TcpSocket检测的端口
+
  */
-class TcpSocket extends AbstractModel
+class DescribeOSImagesRequest extends AbstractModel
 {
-    /**
-     * @var integer TcpSocket检测的端口
-     */
-    public $Port;
+
 
     /**
-     * @param integer $Port TcpSocket检测的端口
+
      */
     function __construct()
     {
@@ -46,8 +42,6 @@ class TcpSocket extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Port",$param) and $param["Port"] !== null) {
-            $this->Port = $param["Port"];
-        }
+
     }
 }
