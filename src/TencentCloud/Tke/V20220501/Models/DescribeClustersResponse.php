@@ -14,30 +14,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace TencentCloud\Tke\V20180525\Models;
+namespace TencentCloud\Tke\V20220501\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeClusterEndpointStatus返回参数结构体
+ * DescribeClusters返回参数结构体
  *
- * @method string getStatus() 获取查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）
- * @method void setStatus(string $Status) 设置查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）
- * @method string getErrorMsg() 获取开启访问入口失败信息
- * @method void setErrorMsg(string $ErrorMsg) 设置开启访问入口失败信息
+ * @method integer getTotalCount() 获取集群总个数
+ * @method void setTotalCount(integer $TotalCount) 设置集群总个数
+ * @method array getClusters() 获取集群信息列表
+ * @method void setClusters(array $Clusters) 设置集群信息列表
+ * @method array getErrors() 获取错误信息集合
+ * @method void setErrors(array $Errors) 设置错误信息集合
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeClusterEndpointStatusResponse extends AbstractModel
+class DescribeClustersResponse extends AbstractModel
 {
     /**
-     * @var string 查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）
+     * @var integer 集群总个数
      */
-    public $Status;
+    public $TotalCount;
 
     /**
-     * @var string 开启访问入口失败信息
+     * @var array 集群信息列表
      */
-    public $ErrorMsg;
+    public $Clusters;
+
+    /**
+     * @var array 错误信息集合
+     */
+    public $Errors;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +52,9 @@ class DescribeClusterEndpointStatusResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $Status 查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）
-     * @param string $ErrorMsg 开启访问入口失败信息
+     * @param integer $TotalCount 集群总个数
+     * @param array $Clusters 集群信息列表
+     * @param array $Errors 错误信息集合
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -62,12 +70,21 @@ class DescribeClusterEndpointStatusResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
-            $this->Status = $param["Status"];
+        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
+            $this->TotalCount = $param["TotalCount"];
         }
 
-        if (array_key_exists("ErrorMsg",$param) and $param["ErrorMsg"] !== null) {
-            $this->ErrorMsg = $param["ErrorMsg"];
+        if (array_key_exists("Clusters",$param) and $param["Clusters"] !== null) {
+            $this->Clusters = [];
+            foreach ($param["Clusters"] as $key => $value){
+                $obj = new Cluster();
+                $obj->deserialize($value);
+                array_push($this->Clusters, $obj);
+            }
+        }
+
+        if (array_key_exists("Errors",$param) and $param["Errors"] !== null) {
+            $this->Errors = $param["Errors"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
