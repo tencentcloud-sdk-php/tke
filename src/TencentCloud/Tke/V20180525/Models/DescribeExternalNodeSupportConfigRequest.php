@@ -20,18 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeExternalNodeSupportConfig请求参数结构体
  *
- * @method string getClusterId() 获取集群Id
- * @method void setClusterId(string $ClusterId) 设置集群Id
+ * @method string getClusterId() 获取集群Id，可通过查看集群的基本信息->基础信息页获取
+ * @method void setClusterId(string $ClusterId) 设置集群Id，可通过查看集群的基本信息->基础信息页获取
  */
 class DescribeExternalNodeSupportConfigRequest extends AbstractModel
 {
     /**
-     * @var string 集群Id
+     * @var string 集群Id，可通过查看集群的基本信息->基础信息页获取
      */
     public $ClusterId;
 
     /**
-     * @param string $ClusterId 集群Id
+     * @param string $ClusterId 集群Id，可通过查看集群的基本信息->基础信息页获取
      */
     function __construct()
     {
